@@ -178,6 +178,10 @@ function limparCampos() {
     mostrarErro('');
     chamarProdutos();
 }
+// Formata o preço no padrão brasileiro
+function formatarPreco(valor) {
+    return Number(valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
 
 // Preenche a tabela com os produtos
 function produtosTabela(products) {
@@ -192,7 +196,7 @@ function produtosTabela(products) {
         const valores = [
             product.id_produto,
             product.nome_produto,
-            product.preco,
+            formatarPreco(product.preco),
             product.quantidade,
             product.status
         ];
@@ -209,7 +213,7 @@ function produtosTabela(products) {
 
             document.getElementById('id').value = product.id_produto;
             document.getElementById('nome').value = product.nome_produto;
-            document.getElementById('preco').value = product.preco;
+            document.getElementById('preco').value = Number(product.preco).toFixed(2).replace('.', ',');
             document.getElementById('quantidade').value = product.quantidade;
             document.getElementById('status').value = product.status;
         });
