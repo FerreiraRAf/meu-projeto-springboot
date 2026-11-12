@@ -60,7 +60,7 @@ A API segue a arquitetura em camadas: **Controller** (recebe as requisições HT
 ### 1. Clonar o repositório
 
 ```bash
-git clone https://github.com/SEU-USUARIO/meu-projeto-springboot.git
+git clone https://github.com/FerreiraRAf/meu-projeto-springboot.git
 cd meu-projeto-springboot
 ```
 
